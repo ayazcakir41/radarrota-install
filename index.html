@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="cache-control" content="no-cache">
+<title>Radar Güncelle</title>
+<meta name="apple-mobile-web-app-title" content="Radar Güncelle">
+<link rel="apple-touch-icon" href="shortcut-180.png">
+<style>
+  :root { --bg:#f4f5f7; --card:#fff; --text:#15171a; --muted:#5d6470; --accent:#d92e34; --ok:#1f8f4e; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1114; --card:#1a1d22; --text:#f2f3f5; --muted:#9aa2ad; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+  main { max-width:480px; margin:0 auto; padding:32px 16px 48px; }
+  .card { background:var(--card); border-radius:22px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  .head { display:flex; gap:16px; align-items:center; margin-bottom:20px; }
+  .head img { width:72px; height:72px; border-radius:16px; }
+  h1 { font-size:26px; margin:0; }
+  .ver { color:var(--muted); font-size:15px; }
+  a.btn { display:block; text-align:center; background:var(--accent); color:#fff; text-decoration:none;
+          font-weight:600; font-size:19px; padding:16px; border-radius:14px; margin:8px 0 18px; }
+  h2 { font-size:16px; margin:18px 0 6px; }
+  p, li { color:var(--muted); font-size:15px; margin:4px 0; }
+  ul { padding-left:20px; margin:4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <div class="head">
+      <img src="icon-512.png" alt="">
+      <div>
+        <h1>Radar Rota</h1>
+        <div class="ver">Sürüm 1.0 (2611252033) · 25.11.2026 20:33 · 444K</div>
+      </div>
+    </div>
+    <a class="btn" id="install" href="itms-services://?action=download-manifest&amp;url=https://ayazcakir41.github.io/radarrota-install/manifest-2611252033.plist">Yükle / Güncelle</a>
+    <h2>Bu sürümde</h2>
+    <p>Ses seçimi satırı ve açıklama yazıları kaldırıldı; navigasyonda yalnızca 'Sesli radar ve koridor uyarıları' anahtarı kaldı.</p>
+    <h2>Nasıl kurulur?</h2>
+    <ul>
+      <li>Bu sayfayı iPhone'da <b>Safari</b> ile açın; kurulum penceresi kendiliğinden çıkar (çıkmazsa "Yükle / Güncelle"ye basın).</li>
+      <li>Çıkan pencerede "Yükle"yi seçin; uygulama ana ekranda yüklenmeye başlar.</li>
+      <li>Ayarlarınız ve konum izniniz korunur.</li>
+      <li>Kısayol için: Paylaş › Ana Ekrana Ekle ("Web Uygulaması olarak aç" kapalı kalsın).</li>
+      <li>Uygulama da açılışta yeni sürümü kendisi haber verir.</li>
+    </ul>
+    <p style="margin-top:14px">Yalnızca kayıtlı iPhone'lara kurulabilir.</p>
+  </div>
+</main>
+<script>
+  // Sayfa açılınca kurulum penceresini kendiliğinden göster (iOS yine de bir kez "Yükle" onayı ister).
+  // Aynı sürüm için yalnızca bir kez; tekrar için düğmeye basılabilir.
+  (function () {
+    var key = "radarrota-prompted-2611252033";
+    try { if (localStorage.getItem(key)) return; localStorage.setItem(key, "1"); } catch (e) {}
+    setTimeout(function () { window.location.href = document.getElementById("install").href; }, 700);
+  })();
+</script>
+</body>
+</html>
